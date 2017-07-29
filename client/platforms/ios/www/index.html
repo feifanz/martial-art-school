@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <base href="/">
+  <title></title>
+  <link href="css/ionic.app.css" rel="stylesheet">
+
+  <!-- ionic/angularjs js -->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+  <!-- cordova script (this will be a 404 during development) -->
+  <script src="cordova.js"></script>
+
+  <script src="/env/env.js"></script>
+
+  <!-- app:js -->
+  <script src="/app/app.js"></script>
+  <script src="/app/roleInfo/roleInfo.controller.js"></script>
+  <script src="/app/roleInfo/roleInfo.js"></script>
+  <script src="/app/signup/signup.controller.js"></script>
+  <script src="/app/signup/signup.js"></script>
+  <script src="/app/tabs/tabs.controller.js"></script>
+  <script src="/app/tabs/tabs.js"></script>
+  <script src="/app/signin/signin.controller.js"></script>
+  <script src="/app/signin/signin.js"></script>
+  <script src="/app/tabs/homepage/homepage.controller.js"></script>
+  <script src="/app/tabs/homepage/homepage.js"></script>
+  <script src="/app/tabs/settings/settings.controller.js"></script>
+  <script src="/app/tabs/settings/settings.js"></script>
+  <script src="/app/tabs/notification/notification.controller.js"></script>
+  <script src="/app/tabs/notification/notification.js"></script>
+  <script src="/app/tabs/timetable/timetable.controller.js"></script>
+  <script src="/app/tabs/timetable/timetable.js"></script>
+  <script src="/app/tabs/homepage/addtag/addtag.controller.js"></script>
+  <script src="/app/tabs/homepage/addtag/addtag.js"></script>
+  <script src="/app/tabs/homepage/addrule/addrule.controller.js"></script>
+  <script src="/app/tabs/homepage/addrule/addrule.js"></script>
+  <script src="/app/tabs/homepage/checkinstructor/checkinstructor.controller.js"></script>
+  <script src="/app/tabs/homepage/checkinstructor/checkinstructor.js"></script>
+  <script src="/app/tabs/homepage/checkrules/checkrules.controller.js"></script>
+  <script src="/app/tabs/homepage/checkrules/checkrules.js"></script>
+  <script src="/app/tabs/homepage/checkstudent/checkstudent.controller.js"></script>
+  <script src="/app/tabs/homepage/checkstudent/checkstudent.js"></script>
+  <script src="/app/tabs/homepage/editinstructor/editinstructor.controller.js"></script>
+  <script src="/app/tabs/homepage/editinstructor/editinstructor.js"></script>
+  <script src="/app/tabs/homepage/editstudent/editstudent.controller.js"></script>
+  <script src="/app/tabs/homepage/editstudent/editstudent.js"></script>
+  <script src="/app/tabs/homepage/newinstructor/newinstructor.controller.js"></script>
+  <script src="/app/tabs/homepage/newinstructor/newinstructor.js"></script>
+  <script src="/app/tabs/homepage/activation_requests/activation_requests.controller.js"></script>
+  <script src="/app/tabs/homepage/activation_requests/activation_requests.js"></script>
+  <script src="/app/tabs/homepage/instructor/instructor.controller.js"></script>
+  <script src="/app/tabs/homepage/instructor/instructor.js"></script>
+  <script src="/app/tabs/homepage/instructor/instructor_instructor.js"></script>
+  <script src="/app/tabs/homepage/checktags/checktags.controller.js"></script>
+  <script src="/app/tabs/homepage/checktags/checktags.js"></script>
+  <script src="/app/tabs/homepage/newstudent/newstudent.controller.js"></script>
+  <script src="/app/tabs/homepage/newstudent/newstudent.js"></script>
+  <script src="/app/tabs/homepage/rules/rules.controller.js"></script>
+  <script src="/app/tabs/homepage/rules/rules.js"></script>
+  <script src="/app/tabs/notification/newfill/newfill.controller.js"></script>
+  <script src="/app/tabs/notification/newfill/newfill.js"></script>
+  <script src="/app/tabs/notification/choosetype/choosetype.controller.js"></script>
+  <script src="/app/tabs/notification/choosetype/choosetype.js"></script>
+  <script src="/app/tabs/homepage/student/student.controller.js"></script>
+  <script src="/app/tabs/homepage/student/student.js"></script>
+  <script src="/app/tabs/notification/newmessage/newmessage.controller.js"></script>
+  <script src="/app/tabs/notification/newmessage/newmessage.js"></script>
+  <script src="/app/tabs/timetable/addclass/addclass.controller.js"></script>
+  <script src="/app/tabs/timetable/addclass/addclass.js"></script>
+  <script src="/app/tabs/homepage/tags/tags.controller.js"></script>
+  <script src="/app/tabs/homepage/tags/tags.js"></script>
+  <script src="/app/tabs/notification/viewfillclass/viewfillclass.controller.js"></script>
+  <script src="/app/tabs/notification/viewfillclass/viewfillclass.js"></script>
+  <script src="/app/tabs/timetable/add_student_to_class/add_student_to_class.controller.js"></script>
+  <script src="/app/tabs/timetable/add_student_to_class/add_student_to_class.js"></script>
+  <script src="/app/tabs/timetable/checkclass/checkclass.controller.js"></script>
+  <script src="/app/tabs/timetable/checkclass/checkclass.js"></script>
+  <script src="/app/tabs/timetable/choosedetail/choosedetail.controller.js"></script>
+  <script src="/app/tabs/timetable/choosedetail/choosedetail.js"></script>
+  <script src="/app/tabs/timetable/rollcall/rollcall.controller.js"></script>
+  <script src="/app/tabs/timetable/rollcall/rollcall.js"></script>
+  <script src="/app/tabs/notification/viewaccess/viewaccess.controller.js"></script>
+  <script src="/app/tabs/notification/viewaccess/viewaccess.js"></script>
+  <script src="/app/tabs/timetable/showtimetable/showtimetable.controller.js"></script>
+  <script src="/app/tabs/timetable/showtimetable/showtimetable.js"></script>
+  <script src="/app/tabs/timetable/rollcallrecord/rollcallrecord.controller.js"></script>
+  <script src="/app/tabs/timetable/rollcallrecord/rollcallrecord.js"></script>
+  <script src="/app/tabs/timetable/managestudent/managestudent.controller.js"></script>
+  <script src="/app/tabs/timetable/managestudent/managestudent.js"></script>
+  <script src="/app/tabs/notification/viewmessage/viewmessage.controller.js"></script>
+  <script src="/app/tabs/notification/viewmessage/viewmessage.js"></script>
+  <!-- endinject -->
+
+  <!-- components:js -->
+  <script src="/components/User/User.service.js"></script>
+  <script src="/components/auth/auth.service.js"></script>
+  <script src="/components/Person/Person.service.js"></script>
+  <!-- endinject -->
+</head>
+
+<body ng-app="app">
+  <ion-nav-bar class="bar-stable">
+    <ion-nav-back-button></ion-nav-back-button>
+  </ion-nav-bar>
+  <ion-nav-view></ion-nav-view>
+</body>
+
+</html>

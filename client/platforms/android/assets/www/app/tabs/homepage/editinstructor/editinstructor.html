@@ -1,0 +1,49 @@
+<ion-view title="Edit Instructor">
+  <ion-content padding="true" class="has-header" overflow-scroll="true">
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">First Name:</span>
+        <input type="text" ng-disabled="!canEdit" ng-model="instructor.firstName">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Family Name:</span>
+        <input type="text" ng-disabled="!canEdit" ng-model="instructor.lastName">
+      </label>
+
+      <label class="item item-input" ng-hide="!canEdit">
+        <div class="input-label">
+          Birthday:
+        </div>
+        <input type="date" ng-disabled="!canEdit" ng-model="instructor.birthday">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Phone Number:</span>
+        <input type="text" ng-disabled="!canEdit" ng-model="instructor.phone">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Email:</span>
+        <input type="text" ng-disabled="!canEdit" ng-model="instructor.emailAddress">
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Level Tag:
+        </div>
+        <select ng-model="instructor.tag" id="select" disabled="disabled">
+          <option ng-repeat="item in tags" value="{{item.tag}}"> {{item.tag}} </option>
+        </select>
+      </label>
+
+      <button ng-if="canEdit" class="button button-block button-positive" ng-click="update()">
+        Update
+      </button>
+
+      <button ng-if="canEdit" class="button button-outline button-positive button-block" ng-click="remove(instructor._id)">
+        Delete instructor
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

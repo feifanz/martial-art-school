@@ -1,0 +1,65 @@
+<ion-view title="Account activation requests">
+  <ion-content padding="true" class="has-header">
+    <div ng-repeat="request in requests">
+      <div class="card">
+        <div class="item item-divider item-text-wrap">
+          Request to become an {{request.role}} ({{request.status}})
+        </div>
+        <div ng-if="request.status === 'PENDING'">
+          <div class="item item-text-wrap">Username: {{request.user.username}}</div>
+          <div class="item item-text-wrap">Email: {{request.user.email}}</div>
+
+          <div class="item item-divider item-text-wrap">
+            Before approving, select the person to link to this user:
+          </div>
+          <div class="item item-text-wrap" ng-if="!persons.length">
+            There are no persons without linked user accounts.
+            <span>
+              <a ui-sref="tabs.newstudent">Create one</a>
+            </span>
+          </div>
+          <div class="item item-radio item-text-wrap">
+            <ion-radio ng-value="person" ng-model="request.person"
+            ng-repeat="person in persons">
+              {{person.firstName}} {{person.lastName}}
+            </ion-radio>
+          </div>
+
+          <div class="item item-divider item-text-wrap button-bar">
+            <button class="button button-balanced"
+            ng-disabled="!readyToApprove(request)"
+            ng-click="approve(request)">
+              Approve
+            </button>
+            <button class="button button-assertive" ng-click="reject(request)">
+              Reject
+            </button>
+          </div>
+        </div>
+
+        <div ng-if="request.status === 'APPROVED'">
+          <div class="item item-text-wrap">Username: {{request.user.username}}</div>
+          <div class="item item-text-wrap">Email: {{request.user.email}}</div>
+          <div class="item item-text-wrap">
+            Person: {{request.user.person.firstName}} {{request.user.person.lastName}}
+          </div>
+          <div class="item item-text-wrap item-divider button-bar">
+            <button class="button button-assertive" ng-click="revoke(request)">
+              Revoke request
+            </button>
+          </div>
+        </div>
+
+        <div ng-if="request.status === 'REJECTED'">
+          <div class="item item-text-wrap">Username: {{request.user.username}}</div>
+          <div class="item item-text-wrap">Email: {{request.user.email}}</div>
+          <div class="item item-divider item-text-wrap button-bar">
+            <button class="button button-balanced" ng-click="reopen(request)">
+              Re-open request
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

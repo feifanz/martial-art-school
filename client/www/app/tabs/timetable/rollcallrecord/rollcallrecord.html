@@ -1,0 +1,38 @@
+<ion-view title="Roll Call record">
+  <ion-content padding="true" class="has-header">
+
+    <ion-refresher 
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Search" ng-model="searchQuery">
+      </label>
+    </div>
+
+    <div class="row">
+      <div class="col positive">Name</div>
+      <div class="col positive">Check In</div>
+      <div class="col positive">Check Out</div>
+      <div class="col positive">Comment</div>
+    </div>
+
+    <div class="row" ng-repeat="item in records |filter:searchQuery">
+      <div class="col ">{{item.attendee.firstName}} {{item.attendee.lastName}}</div>
+      <div class="col ">
+        {{item.inTime.year}}-{{item.inTime.month}}-{{item.inTime.day}}<br>
+        {{item.inTime.hh}}:{{item.inTime.mm}}:{{item.inTime.ss}}
+      </div>
+      <div class="col ">
+        {{item.outTime.year}}-{{item.outTime.month}}-{{item.outTime.day}}<br>
+        {{item.outTime.hh}}:{{item.outTime.mm}}:{{item.outTime.ss}}
+      </div>
+      <div class="col ">{{item.comment}}</div>
+    </div>
+    
+    </ion-content>
+</ion-view>

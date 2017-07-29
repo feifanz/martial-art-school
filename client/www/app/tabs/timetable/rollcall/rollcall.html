@@ -1,0 +1,46 @@
+<ion-view title="Roll Call">
+  <ion-content padding="true" class="has-header">
+  
+  <ion-refresher 
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+  </ion-refresher>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Search" ng-model="searchQuery">
+      </label>
+    </div>
+
+    <div class = "row" style="display:{{showWarning}}; background:#F9EECF;border:2px;text-align:center">
+      <p>
+      <font color="red">
+        Warning:<br>
+      </font>
+        If the student has inappropriate grade, the grade would be red.<br>
+        If the student didn't pay for the current course, the check button would be red.
+      </p>
+    </div>
+
+
+    <div class="row">
+      <div class="col positive" align="center">Name</div>
+      <div class="col positive" align="center">Grade</div>
+      <div class="col positive" align="center">Action</div>
+    </div>
+
+    <div class="row" ng-repeat="item in attendees | filter:searchQuery">
+      <div class="col" align="center">{{item.firstName}} {{item.lastName}}</div>
+      <div class="col" align="center"><font color="{{item.lvl}}">{{item.tag}}</font></div>
+      <div class="col" align="center">
+      <p>
+      <a class="button button-stable button-small {{item.paid}}"  ng-click="checkInOut(item._id)">{{item.checkFlag}}</a>
+      <a class="button button-stable button-small button-energized icon ion-edit" ng-click="addComment(item._id)"></a>
+      </p>
+      </div>
+    </div>
+
+    
+    </ion-content>
+</ion-view>

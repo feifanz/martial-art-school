@@ -1,0 +1,39 @@
+<ion-view title="View Message">
+  <ion-content padding="true" class="has-header" overflow-scroll="true">
+    <div class="list card">
+
+  <div class="item item-body">
+    <h> {{message.title}}</h>
+    
+  </div>
+
+  <div class="item item-body" >
+  <h2> {{message.reporter}}</h2>
+    <p >
+    <input type="datetime-local" ng-model="message.sendTime">
+    </p>
+    Class Name and Start Time:
+     <p >
+    {{event.name}}
+    <input type="datetime-local" ng-model="event.startTime">
+    </p>
+  content:
+    <p>
+      {{message.content}}
+    </p>
+    Volunteers:
+<p ng-repeat="item in message.fillInVolunteers">
+  {{item}}
+</p>
+    
+  </div>
+
+</div>
+
+   <div >
+    <button class="button button-block button-positive" ng-click="volunteer()">Hand Up</button>
+   </div>
+
+       
+  </ion-content>
+</ion-view>

@@ -1,0 +1,35 @@
+<ion-view title="Check class">
+  <ion-content padding="true" class="has-header">
+
+    <ion-refresher 
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Search" ng-model="searchQuery">
+      </label>
+    </div>
+
+  <div class="row">
+      <div class="col positive" align="left">Name</div>
+      <div class="col positive" align="left">Venue</div>
+      <div class="col positive" align="left">Type</div>
+      <div class="col positive" align="right">Detail </div>
+  </div>
+
+    <div class="row" ng-repeat="item in events| filter:searchQuery">
+      <div class="col" align="left">{{item.name}}</div>
+      <div class="col" align="left">{{item.venue.name}}</div>
+      <div class="col" align="left">{{item.tag}}</div>
+      <div class="col" align="right">
+        <button class="button button-small button-stable button-positive" ng-click="toEvent(item._id)">
+         Detail
+        </button>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

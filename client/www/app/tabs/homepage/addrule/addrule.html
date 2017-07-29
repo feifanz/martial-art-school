@@ -1,0 +1,56 @@
+<ion-view title="Add a new rules" >
+
+    <ion-content padding="true" class="has-header ">
+
+     <form class="list" ng-submit="submit()">
+
+        <!-- <div class="item item-input item-select">
+          <div class="input-label">
+            Person Tags
+          </div>
+          <select ng-model="rule.personTags">
+            <option value="">select</option>
+            <option ng-repeat="item in personTags" value="{{item.tag}}"> {{item.tag}} </option>
+          </select>
+        </div> -->
+
+        <div class="item item-input item-list">
+          <div class="input-label">
+            Grade
+          </div>
+          <div class="ion-list">
+            <ion-checkbox class="item-borderless" ng-repeat="item in personTags" 
+              ng-model="item.selected">
+              {{item.tag}}
+            </ion-checkbox>
+          </div>
+        </div>
+
+        <div class="item item-input item-select">
+          <div class="input-label">
+            Payment Tag
+          </div>
+          <select ng-model="rule.paymentTag">
+            <option value="">select</option>
+            <option ng-repeat="item in paymentTags" value="{{item.tag}}"> {{item.tag}} </option>
+          </select>
+        </div>
+
+        <div class="item item-input item-select">
+          <div class="input-label">
+            Event Tag
+          </div>
+          <select ng-model="rule.eventTag">
+           <option value="">select</option>
+          <option ng-repeat="item in eventTags" value="{{item.tag}}">{{item.tag}}</option>
+          </select>
+        </div>
+
+        <div>
+          <button class="button button-block button-positive">Submit</button>
+        </div>
+      
+      </form>
+
+    </ion-content>
+</ion-view>

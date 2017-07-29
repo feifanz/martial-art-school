@@ -1,0 +1,39 @@
+{
+  "name": "ionic-project",
+  "version": "1.1.1",
+  "description": "An Ionic project",
+  "dependencies": {
+    "gulp": "^3.5.6",
+    "gulp-clean-css": "^2.0.12",
+    "gulp-concat": "^2.2.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-sass": "^2.0.4"
+  },
+  "devDependencies": {
+    "bower": "^1.3.3",
+    "fs-promise": "^0.5.0",
+    "gulp-inject": "^4.1.0",
+    "gulp-util": "^2.2.14",
+    "shelljs": "^0.3.0",
+    "yargs": "^6.0.0"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-console",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "ionic-plugin-keyboard"
+  ],
+  "cordovaPlatforms": [
+    {
+      "platform": "ios",
+      "version": "",
+      "locator": "ios"
+    }
+  ],
+  "scripts": {
+    "dev": "ionic serve --env development",
+    "prod": "ionic serve --env production"
+  }
+}

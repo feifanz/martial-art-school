@@ -1,0 +1,22 @@
+<ion-view title="Settings" >
+  <ion-content class="padding">
+    <div class="list">
+      <div class="item item-divider">Current role</div>
+      <label class="item item-radio">
+        <ion-radio ng-repeat="role in roles" ng-value="role"
+        ng-model="data.currentRole" ng-change="selectRole(role)">
+          {{role}}
+        </ion-radio>
+      </label>
+    </div>
+
+    <div class="item item-divider item-text-wrap">
+      Sign out
+    </div>
+    <div class="item button-bar">
+      <button class="button button-balanced" ng-click="signout()">
+        Sign out
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

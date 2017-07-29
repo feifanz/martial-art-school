@@ -1,0 +1,29 @@
+<ion-view title="Check rules">
+  <ion-content padding="true" class="has-header" overflow-scroll="true">
+
+    <ion-refresher 
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <div class="row">
+      <div class="col positive ">Person Tags</div>
+      <div class="col positive">Payment Tag</div>
+      <div class="col positive">Event Tags</div>
+      <div class="col col-10 positive">Action</div>
+    </div>
+
+    <div class="row" ng-repeat="item in rules">
+      <div class="col ">{{item.personTags}}</div>
+      <div class="col ">{{item.paymentTag}}</div>
+      <div class="col ">{{item.eventTag}}</div>
+      <div class="col col-10">
+        <button class="button button-stable button-small button-assertive"
+        ng-disabled="!canDelete" ng-click="remove(item._id)">
+          delete
+        </button>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,65 @@
+<ion-view title="Fill in class" >
+  <ion-content padding="true" class="has-header ">
+    <form class="list" ng-submit="submit()">
+    <div>
+
+    
+      <br>
+    <label class="item item-input">
+        
+        <input type="text" ng-model = "message.title" placeholder="Title">
+    </label>
+
+    <br>
+    
+    
+
+    <label class="item item-input">
+        <textarea 
+        rows="10"
+        type="text" ng-model = "message.content" placeholder="Context" 
+        id="txtnotes"
+        ng-keyup="expandText()"
+        ng-keydown="expandText()">
+        </textarea>
+    </label>
+
+        <label class="item item-input item-select">
+        <div class="input-label">
+           Message Type:
+        </div>
+
+        <select ng-model="message.messageType">
+          <option value="">select</option>
+          <option ng-repeat="item in messageTypes" value="{{item.value}}"> {{item.text}}</option>
+        </select>
+        </label>
+
+
+
+        <label class="item item-input item-select">
+        <div class="input-label">
+           Choose class:
+        </div>
+
+        <select ng-model="message.fillInClass">
+          <option value="">select</option>
+          <option ng-repeat="item in events" value="{{item._id}}"> name:{{item.name}},date:{{item.startTime}}</option>
+        </select>
+        </label>
+
+
+        
+
+
+
+    <div class="padding">
+        <button class="button button-block button-positive">Send</button>
+    </div>
+
+    </div>
+
+    </form>
+      
+    </ion-content>
+</ion-view>

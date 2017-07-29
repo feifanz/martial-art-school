@@ -1,0 +1,10 @@
+<ion-view title="Tags" >
+  <ion-content class="padding">
+    <div class="content padding has-header">
+      <button ng-repeat="link in links" ui-sref="{{link.ref}}"
+      class="button button-outline button-positive button-block">
+        {{link.title}}
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

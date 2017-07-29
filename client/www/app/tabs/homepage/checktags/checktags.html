@@ -1,0 +1,27 @@
+<ion-view title="Check tags">
+  <ion-content padding="true" class="has-header" overflow-scroll="true">
+
+    <ion-refresher 
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+
+    <div class="row">
+      <div class="col positive" align="left">Tag Name</div>
+      <div class="col positive" align="center">Tag Type</div>
+      <div class="col positive" align="right">Action</div>
+    </div>
+
+    <div class="row" ng-repeat="item in tags">
+      <div class="col" align="left">{{item.tag}}</div>
+      <div class="col" align="center">{{item.tagType}}</div>
+      <div class="col" align="right">
+        <button class="button button-stable button-small button-assertive"
+        ng-disabled="!canDelete" ng-click="remove(item._id)">
+          delete
+        </button>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,38 @@
+<ion-view title="notification" >
+
+  <ion-content padding="true" class="has-header" overflow-scroll="true">
+
+    <ion-refresher 
+      pulling-text="Pull to refresh..."
+      on-refresh="doRefresh()">
+    </ion-refresher>
+
+ 	  <button class="button button-outline button-positive button-block" ng-click="newMessage()">
+      create new notification
+    </button>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search" placeholder="Search" ng-model="searchQuery">
+      </label>
+    </div>
+
+    <div class="content has-header" ng-repeat="item in seenMessages | filter:searchQuery" ">
+      <div class="card">
+        <div class="item item-divider item-checkbox">
+        <label class="checkbox checkbox-positive">
+        <input type="checkbox" ng-model="item.selected">
+        </label>
+         {{item.title}}
+        </div>
+        <div class="item item-text-wrap" ng-click="toMessage(item.id,item.messageType)">
+        {{item.reporter}}<br>
+        {{item.messageType}}&nbsp;&nbsp;&nbsp;{{item.sendTime}}
+        </div>
+      </div>
+    </div>
+    
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,53 @@
+<ion-view title="Add a New Instructor" >
+  <ion-content padding="true" class="has-header ">
+    <form class="list" ng-submit="submit()">
+    <div>
+      <label class="item item-input">
+        <span class="input-label">First Name:</span>
+        <input type="text" ng-model = "person.firstName" placeholder="First Name">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Last Name:</span>
+        <input type="text" ng-model = "person.lastName" placeholder="Last Name">
+      </label>
+
+      <label class="item item-input">
+        <div class="input-label">
+          Birthday:
+        </div>
+        <input type="date" ng-model = "person.birthday" placeholder="Birthday">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Phone Number:</span>
+        <input type="text" ng-model = "person.phone" placeholder="Phone Number">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Email:</span>
+        <input type="text" ng-model = "person.emailAddress" placeholder="Email Address">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Address:</span>
+        <input type="text" ng-model = "person.address" placeholder="Address">
+      </label>
+
+       <label class="item item-input item-select">
+        <div class="input-label">
+          Level Tag:
+        </div>
+        <select ng-model="person.tag">
+          <option value="">select</option>
+          <option ng-repeat="item in tags" value="{{item.tag}}"> {{item.tag}} </option>
+        </select>
+      </label>
+
+      <button class="button button-block button-positive">
+        Create
+      </button>
+      
+    </div>
+  </ion-content>
+</ion-view>

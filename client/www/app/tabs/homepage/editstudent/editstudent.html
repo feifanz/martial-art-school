@@ -1,0 +1,70 @@
+<ion-view title="Edit student">
+  <ion-content padding="true" class="has-header" overflow-scroll="true">
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">First Name:</span>
+        <input type="text" ng-disabled="!canEdit" ng-model="student.firstName">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Family Name:</span>
+        <input type="text" ng-disabled="!canEdit" ng-model="student.lastName">
+      </label>
+
+      <label class="item item-input">
+        <div class="input-label">
+          Birthday:
+        </div>
+        <input type="date" ng-disabled="!canEdit" ng-model="student.birthday">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Phone Number:</span>
+        <input type="text" ng-disabled="!canEdit" ng-model="student.phone">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Email:</span>
+        <input type="text" ng-disabled="!canEdit" ng-model="student.emailAddress">
+      </label>
+
+      <label class="item item-input">
+        <span class="input-label">Medical Information:</span>
+        <input type="text" ng-disabled="!canEdit" ng-model="student.medicalInfo">
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Level Tag:
+        </div>
+        <select ng-model="student.tag" id="tagSelect" disabled="disabled">
+          <option ng-repeat="item in tags" value="{{item.tag}}"> {{item.tag}} </option>
+        </select>
+      </label>
+
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Payment Category:
+        </div>
+        <select ng-model="student.payment" id="paymentSelect" disabled="disabled">
+          <option ng-repeat="item in payment" value="{{item.tag}}"> {{item.tag}} </option>
+        </select>
+      </label>
+
+      <label class="item item-input">
+        <div class="input-label">
+          Payment Expire Date:
+        </div>
+        <input type="date" ng-disabled="!canEdit" ng-model="student.paymentExpireDate">
+      </label>
+
+      <button ng-if="canEdit" class="button button-block button-positive" ng-click="update()">
+        Update
+      </button>
+
+      <button ng-if="canEdit" class="button button-outline button-positive button-block" ng-click="remove(student._id)">
+        Delete Student
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

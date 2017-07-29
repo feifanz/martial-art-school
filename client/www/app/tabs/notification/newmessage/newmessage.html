@@ -1,0 +1,35 @@
+<ion-view title="Generic Notification" >
+  <ion-content padding="true" class="has-header ">
+    <form class="list" ng-submit="submit()">
+    <div>
+
+    <br>
+    <label class="item item-input">
+        
+        <input type="text" ng-model = "message.title" placeholder="Title">
+    </label>
+
+    <br>
+    
+
+    <label class="item item-input">
+        <textarea 
+        rows="10"
+        type="text" ng-model = "message.content" placeholder="Context" 
+        id="txtnotes"
+        ng-keyup="expandText()"
+        ng-keydown="expandText()">
+        </textarea>
+    </label>
+
+
+    <div class="padding">
+        <button class="button button-block button-positive">Send</button>
+    </div>
+
+    </div>
+
+    </form>
+      
+    </ion-content>
+</ion-view>

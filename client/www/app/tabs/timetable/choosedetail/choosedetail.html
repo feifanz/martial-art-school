@@ -1,0 +1,39 @@
+<ion-view title="Choose detail">
+  <ion-content padding="true" class="has-header" overflow-scroll="true">
+  <div class="list">
+
+  <label class="item item-input">
+    <span class="input-label">Class Name:</span>
+    <input type="text" ng-disabled="!canEdit" ng-model = "event.name">
+  </label>
+
+  <label class="item item-input">
+    <span class="input-label">Class Type:</span>
+    <input type="text" ng-disabled="!canEdit" ng-model = "event.tag">
+  </label>
+
+  <label class="item item-input">
+    <span class="input-label">Venue:</span>
+    <input type="text" ng-disabled="!canEdit" ng-model = "venue.name">
+  </label>
+
+  <label class="item item-input">
+    <div class="input-label">
+      Start Time
+    </div>
+    <input type="datetime-local" ng-disabled="!canEdit" ng-model = "event.startTime">
+  </label>
+
+  <label class="item item-input">
+    <span class="input-label">Duration mins:</span>
+    <input type="text" ng-disabled="!canEdit" ng-model = "event.durationMins">
+  </label>
+
+     <button ng-repeat="link in links" ui-sref="{{link.ref}}({eventId: event._id})"
+     class = "button button-outline button-positive button-block">
+       {{link.title}}
+     </button>
+
+    </div>
+    </ion-content>
+</ion-view>
