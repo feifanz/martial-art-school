@@ -1,0 +1,19 @@
+Ensure the following are installed on your system:
+  node
+  mongodb
+  ionic
+
+Client installation instructions (cd to the client dir):
+	npm install
+	bower install
+	ionic state restore
+	ionic hooks add
+
+Server installation instructions (cd to the server dir):
+	npm install
+
+Starting up for development:
+	1. cd to the server dir
+	2. node app
+	3. in a new terminal, cd to the client dir
+	4. ionic serve
